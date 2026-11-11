@@ -16,11 +16,21 @@ A solução foi validada em laboratório com Ubuntu no **WSL 2** e os serviços 
 
 ## Conteúdo do repositório
 - `documentacao_SO2.pdf`: documentação completa do trabalho.
-- `laboratorio/pwd.yml`: arquivo de orquestração usado no laboratório (do repositório oficial frappe_docker).
-- `laboratorio/.wslconfig`: limites de memória e processadores do WSL 2 (4 GB e 2 processadores).
+
+O arquivo de orquestração `pwd.yml` usado no laboratório é o do repositório oficial [frappe_docker](https://github.com/frappe/frappe_docker), na versão consultada em outubro de 2026. O arquivo atual pode ter pequenas diferenças.
 
 ## Como reproduzir o ambiente de laboratório
 Requisitos: Windows 10/11 com virtualização habilitada, WSL 2 e Docker Desktop com backend WSL 2.
+
+Limite de recursos do WSL 2 usado nos testes (arquivo `%UserProfile%\.wslconfig`):
+
+```ini
+[wsl2]
+memory=4GB
+processors=2
+```
+
+Subida da pilha do ERPNext:
 
 ```powershell
 git clone https://github.com/frappe/frappe_docker.git
